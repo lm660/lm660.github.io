@@ -379,11 +379,11 @@
 <p>参考教程：<a target="_blank" rel="noopener" href="http://t.csdn.cn/RR5BA">http://t.csdn.cn/RR5BA</a></p>
 <h2 id="四、在Pycharm中使用anaconda已创建好的环境"><a href="#四、在Pycharm中使用anaconda已创建好的环境" class="headerlink" title="四、在Pycharm中使用anaconda已创建好的环境"></a>四、在Pycharm中使用anaconda已创建好的环境</h2><p>此时可以下载好一个开源的深度学习代码，右键用pycharm打开。</p>
 <p>然后安装下面步骤进行。</p>
-<p><img src="/2022/12/20/runDLcode/image-20221222104100357.png" alt="image-20221222104100357"></p>
-<p><img src="/2022/12/20/runDLcode/image-20221222104148254.png" alt="image-20221222104148254"></p>
-<p>选择add interpreter</p>
-<p><img src="/2022/12/20/runDLcode/image-20221222104424489.png" alt="image-20221222104424489">选择conda environment，第一次找到你安装路径下面的conda.exe</p>
-<p><img src="/2022/12/20/runDLcode/image-20221222103938612.png" alt="image-20221222103938612"></p>
+<p><img src="/2022/12/20/rundl/1.png" alt="image-20221222175701985"></p>
+<p><img src="/2022/12/20/rundl/2.png" style="zoom:80%;">选择add interpreter</p>
+<p><img src="/2022/12/20/rundl/3.png" alt="image-20221222175701985"></p>
+<p>选择conda environment，第一次找到你安装路径下面的conda.exe</p>
+<p><img src="/2022/12/20/rundl/4.png"></p>
 <p>事先创建好了的环境，应该是在conda安装目录下面envs文件夹里面，然后选择use existing environment，从下面选择你创建好的环境地址即可。或者实现没有创建好环境，选择create new environment 。也就是选择了一个python版本，默认地址就行。最后点击下面的ok就行了。</p>
 <p>这个conda的作用是你每建立一个项目，都可设置一个新的环境，这样项目之间就不会发生环境冲突的问题了</p>
 <p>自此所有环境配置完成，下面就可运行项目啦，点击pycharm上面的绿色三角按钮，下面肯定会报错，因为你还没有安装使用到的包，此时就可根据报错去安装所有的包啦（一般就是pip install 包名字），还有注意一下数据集的路径，有没有数据集文件在数据集的文件夹里面。</p>
@@ -421,7 +421,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lm660.github.io/2022/12/20/runDLcode/">https://lm660.github.io/2022/12/20/runDLcode/</a>
+                    <a href="https://lm660.github.io/2022/12/20/rundl/">https://lm660.github.io/2022/12/20/rundl/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,9 +543,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/12/20/rundl/">
                     <div class="card-image">
@@ -563,9 +564,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B%E7%B1%BB/" class="post-category">
+                                    教程类
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">
+                        <span class="chip bg-color">配置环境</span>
+                    </a>
+                    
+                    <a href="/tags/anaconda-pycharm/">
+                        <span class="chip bg-color">anaconda+pycharm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/20/runDLcode/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第一次跑通DL代码">
+                        
+                        <span class="card-title">第一次跑通DL代码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -589,43 +644,6 @@
                         <span class="chip bg-color">anaconda+pycharm</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/11/28/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            mmya
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
