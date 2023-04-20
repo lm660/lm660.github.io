@@ -5,9 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="第一次跑通DL代码, “mmyaのblog”">
-    <meta name="description" content="前言论文里的开源代码是不是想跑通？网上配置环境一大堆不知哪个可行？由于没有人带，走了很多弯路，踩了很多坑终于跑通了代码，在此记录一下！针对小白，大佬可绕过哈。
+    <meta name="description" content="前言论文里的开源代码是不是想跑通？网上配置环境一大堆不知哪个可行？由于没有人带，走了很多弯路，踩了很多坑终于跑通了代码，在此记录一下！
 
-首先明确一点是在本地跑代码，要是在服务器上面就不需要这些软件啦，直接在服务器上">
+首先明确一点是在本地跑代码，要是在服务器上面就不需要这些软件啦，直接在服务器上配置就可。
+
+对电脑要求">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -295,7 +297,10 @@
     
     <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        
+
+
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -349,12 +354,40 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFunction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>论文里的开源代码是不是想跑通？网上配置环境一大堆不知哪个可行？由于没有人带，走了很多弯路，踩了很多坑终于跑通了代码，在此记录一下！针对小白，大佬可绕过哈。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>论文里的开源代码是不是想跑通？网上配置环境一大堆不知哪个可行？由于没有人带，走了很多弯路，踩了很多坑终于跑通了代码，在此记录一下！</p>
 <ul>
 <li><p>首先明确一点是在本地跑代码，要是在服务器上面就不需要这些软件啦，直接在服务器上配置就可。</p>
 </li>
@@ -384,12 +417,12 @@
 <p><img src="/2022/12/20/rundl/3.png" alt="image-20221222175701985"></p>
 <p>选择conda environment，第一次找到你安装路径下面的conda.exe</p>
 <p><img src="/2022/12/20/rundl/4.png"></p>
-<p>事先创建好了的环境，应该是在conda安装目录下面envs文件夹里面，然后选择use existing environment，从下面选择你创建好的环境地址即可。或者实现没有创建好环境，选择create new environment 。也就是选择了一个python版本，默认地址就行。最后点击下面的ok就行了。</p>
+<p>事先创建好了的环境，应该是在conda安装目录下面envs文件夹里面，然后选择use existing environment，从下面选择你创建好的环境地址即可。或者事先没有创建好环境，选择create new environment 。也就是选择了一个python版本，默认地址就行。最后点击下面的ok就行了。</p>
 <p>这个conda的作用是你每建立一个项目，都可设置一个新的环境，这样项目之间就不会发生环境冲突的问题了</p>
 <p>自此所有环境配置完成，下面就可运行项目啦，点击pycharm上面的绿色三角按钮，下面肯定会报错，因为你还没有安装使用到的包，此时就可根据报错去安装所有的包啦（一般就是pip install 包名字），还有注意一下数据集的路径，有没有数据集文件在数据集的文件夹里面。</p>
 <h2 id="五、安装pytorch"><a href="#五、安装pytorch" class="headerlink" title="五、安装pytorch"></a>五、安装pytorch</h2><p>因为我第一个运行的项目就是使用的pytorch框架，所以还要安装一下torch。</p>
 <p>在我直接使用pip install torch安装torch时安装不成功。有的电脑就直接可以这样安装好（可能使用的是CPU）。我就查找了GPU方法，使用了下面这条指令即可</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">pip install torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>因为我这个使用的torch版本是1.2的，对应的torchvision是0.4的。下面给出了torch和torchvision的版本对应关系。</p>
 <p>参考链接：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fEKb4">http://t.csdn.cn/fEKb4</a></p>
@@ -543,18 +576,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/12/20/rundl/">
+                <a href="/2023/04/16/stack/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第一次跑通DL代码">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="手动实现栈结构stack">
                         
-                        <span class="card-title">第一次跑通DL代码</span>
+                        <span class="card-title">手动实现栈结构stack</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -564,31 +596,30 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B%E7%B1%BB/" class="post-category">
-                                    教程类
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/" class="post-category">
+                                    技术类
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">
-                        <span class="chip bg-color">配置环境</span>
+                    <a href="/tags/TS/">
+                        <span class="chip bg-color">TS</span>
                     </a>
                     
-                    <a href="/tags/anaconda-pycharm/">
-                        <span class="chip bg-color">anaconda+pycharm</span>
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
                     </a>
                     
                 </div>
@@ -643,6 +674,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
@@ -811,7 +845,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <a href="/about" target="_blank">mmya</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
