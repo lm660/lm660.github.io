@@ -504,6 +504,25 @@ linkedList<span class="token punctuation">.</span><span class="token function">i
 
     <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getNode</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token operator">?.</span>value<span class="token operator">??</span><span class="token keyword">null</span>
   <span class="token punctuation">}</span>
+     <span class="token comment">//删除方法</span>
+  <span class="token function">removeAt</span><span class="token punctuation">(</span>position<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token constant">T</span><span class="token operator">|</span><span class="token keyword">null</span><span class="token punctuation">{</span>
+    <span class="token comment">//越界判断</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>position<span class="token operator">&lt;</span><span class="token number">0</span><span class="token operator">||</span>position<span class="token operator">&gt;=</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token keyword">null</span>
+
+    <span class="token comment">//判断是不是删除第一个</span>
+    <span class="token keyword">let</span> current<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>head
+    <span class="token keyword">if</span><span class="token punctuation">(</span>position<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>head<span class="token operator">=</span>current<span class="token operator">?.</span>next<span class="token operator">??</span><span class="token keyword">null</span><span class="token comment">//表示current可能为undefined时，让值为null</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+      <span class="token keyword">const</span> previous<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getNode</span><span class="token punctuation">(</span>position<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token comment">//需要给current重新赋值，否则返回的值永远是第一个值</span>
+      current<span class="token operator">=</span>previous<span class="token operator">!</span><span class="token punctuation">.</span>next
+      previous<span class="token operator">!</span><span class="token punctuation">.</span>next<span class="token operator">=</span>previous<span class="token operator">?.</span>next<span class="token operator">?.</span>next<span class="token operator">??</span><span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token operator">--</span>
+    <span class="token keyword">return</span> current<span class="token operator">?.</span>value<span class="token operator">??</span><span class="token keyword">null</span>
+
+  <span class="token punctuation">}</span>
 
   <span class="token comment">//根据位置修改元素</span>
   <span class="token function">update</span><span class="token punctuation">(</span>value<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">,</span>position<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">boolean</span><span class="token punctuation">{</span>
@@ -512,7 +531,7 @@ linkedList<span class="token punctuation">.</span><span class="token function">i
     <span class="token keyword">let</span> currentnode<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getNode</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span>
     currentnode<span class="token operator">!</span><span class="token punctuation">.</span>value<span class="token operator">=</span>value
     <span class="token keyword">return</span> <span class="token boolean">true</span>
-  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="2-7根据值获取对应位置索引-indexOf"><a href="#2-7根据值获取对应位置索引-indexOf" class="headerlink" title="2.7根据值获取对应位置索引-indexOf"></a>2.7根据值获取对应位置索引-indexOf</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//根据值获取对应位置索引</span>
  <span class="token function">indexOf</span><span class="token punctuation">(</span>value<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">{</span>
