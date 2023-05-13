@@ -343,7 +343,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li>在普通链表的基础上，最后一个节点的下一个节点不再是null，而是指向链表的第一个节点。这样形成了一个环，使得链表能够被无限遍历。</li>
 <li>这样，我们就可以在单向循环链表中从任意一个节点出发，不断地遍历下一个节点，直到回到起点</li>
 </ul>
-<p><img src="/2023/05/13/circularLinkedList/image-20230513102444645.png" alt="image-20230513102444645"></p>
+<p><img src="/2023/05/13/circularLinkedList/image-20230513112604605.png" alt="image-20230513112604605"></p>
 <h2 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h2><p>继承自之前封装的LinkedList，只实现差异化的部分。</p>
 <h3 id="2-1为了方便继承，重构LinkedLIst"><a href="#2-1为了方便继承，重构LinkedLIst" class="headerlink" title="2.1为了方便继承，重构LinkedLIst"></a>2.1为了方便继承，重构LinkedLIst</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//对单向链表重构：</span>
 <span class="token comment">//首先添加一个尾节点。为了继承，将private变成protected。</span>
