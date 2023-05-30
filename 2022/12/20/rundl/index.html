@@ -360,12 +360,22 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li>安装注意</li>
 </ul>
 <p>安装的时候选择安装用户的时候<strong>一定选择Just me</strong>，之前看教程选择了all user会出现这个问题就是后续创建环境的时候，明明是安装在了D盘，按道理创建的环境应该在envs文件夹下，但是却在C盘，又百度了很多方法都不管用，最后知道安装时选择了all user怎么改都没有用，最后重新卸载安装选择just me正常。假如你的电脑有好几个 Users ，才需要考虑这个问题。其实我们电脑一般就一个 User，就我们一个人使用，所以直接选择just me。如果你的C盘足够大，这怎么选都无所谓呀</p>
-<p>参考教程：<a target="_blank" rel="noopener" href="http://t.csdn.cn/gqctL">http://t.csdn.cn/gqctL</a></p>
-<h3 id="Anaconda创建环境及环境配置"><a href="#Anaconda创建环境及环境配置" class="headerlink" title="Anaconda创建环境及环境配置"></a>Anaconda创建环境及环境配置</h3><p>主要是确定要用的python版本</p>
-<p>参考教程：<a target="_blank" rel="noopener" href="http://t.csdn.cn/QVb1T">http://t.csdn.cn/QVb1T</a></p>
-<h2 id="二、下载cudnn和cuda"><a href="#二、下载cudnn和cuda" class="headerlink" title="二、下载cudnn和cuda"></a>二、下载cudnn和cuda</h2><p>参考教程：<a target="_blank" rel="noopener" href="http://t.csdn.cn/U4ipS">http://t.csdn.cn/U4ipS</a></p>
-<h2 id="三、安装pycharm"><a href="#三、安装pycharm" class="headerlink" title="三、安装pycharm"></a>三、安装pycharm</h2><p>下载社区版的即可，下面参考教程看到安装完成即可</p>
-<p>参考教程：<a target="_blank" rel="noopener" href="http://t.csdn.cn/RR5BA">http://t.csdn.cn/RR5BA</a></p>
+<p>其他按照一般安装步骤即可，搜索“超详细Anaconda安装教程”。</p>
+<h3 id="Anaconda创建环境及环境配置"><a href="#Anaconda创建环境及环境配置" class="headerlink" title="Anaconda创建环境及环境配置"></a>Anaconda创建环境及环境配置</h3><p>主要是确定要用的python版本。以下操作均在anaconda prompt窗口进行命令行操作。</p>
+<h4 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>首先，创建环境，在这里创建一个名为CA<span class="token operator">-</span>MSER的环境<span class="token punctuation">,</span>名字可以自己随意命名。使用python<span class="token operator">==</span><span class="token number">3.7</span>
+conda create <span class="token operator">-</span>n CA<span class="token operator">-</span>MSER python<span class="token operator">==</span><span class="token number">3.7</span>
+<span class="token operator">//</span>查看是否创建成功
+conda info <span class="token operator">-</span><span class="token operator">-</span>envs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>出现下面界面即创建成功。</p>
+<p><img src="/2022/12/20/rundl/image-20230530113040730.png" alt="image-20230530113040730"></p>
+<h4 id="激活环境"><a href="#激活环境" class="headerlink" title="激活环境"></a>激活环境</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">//</span>从base环境切换到CA<span class="token operator">-</span>MSER环境中。
+conda activate CA<span class="token operator">-</span>MSER<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如下图所示，可以看到切换成功。然后根据项目中需要的安装包，进行pip install …(把下面二三四下载完才需要安装相应包)</p>
+<p><img src="/2022/12/20/rundl/image-20230530113434590.png" alt="image-20230530113434590"></p>
+<h2 id="二、下载cudnn和cuda"><a href="#二、下载cudnn和cuda" class="headerlink" title="二、下载cudnn和cuda"></a>二、下载cudnn和cuda</h2><p>没有什么特别的，根据自己电脑安装对应的版本即可。搜索“下载和安装CUDA和Cudnn”。</p>
+<h2 id="三、安装pycharm"><a href="#三、安装pycharm" class="headerlink" title="三、安装pycharm"></a>三、安装pycharm</h2><p>下载社区版的即可，搜索“pycharm安装教程”</p>
 <h2 id="四、在Pycharm中使用anaconda已创建好的环境"><a href="#四、在Pycharm中使用anaconda已创建好的环境" class="headerlink" title="四、在Pycharm中使用anaconda已创建好的环境"></a>四、在Pycharm中使用anaconda已创建好的环境</h2><p>此时可以下载好一个开源的深度学习代码，右键用pycharm打开。</p>
 <p>然后按照下面步骤进行。</p>
 <p><img src="/2022/12/20/rundl/1.png"></p>
@@ -373,15 +383,31 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <p><img src="/2022/12/20/rundl/3.png" alt="image-20221222175701985"></p>
 <p>选择conda environment，第一次找到你安装路径下面的conda.exe</p>
 <p><img src="/2022/12/20/rundl/4.png"></p>
-<p>事先创建好了的环境，应该是在conda安装目录下面envs文件夹里面，然后选择use existing environment，从下面选择你创建好的环境地址即可。或者事先没有创建好环境，选择create new environment 。也就是选择了一个python版本，默认地址就行。最后点击下面的ok就行了。</p>
-<p>这个conda的作用是你每建立一个项目，都可设置一个新的环境，这样项目之间就不会发生环境冲突的问题了</p>
-<p>自此所有环境配置完成，下面就可运行项目啦，点击pycharm上面的绿色三角按钮，下面肯定会报错，因为你还没有安装使用到的包，此时就可根据报错去安装所有的包啦（一般就是pip install 包名字），还有注意一下数据集的路径，有没有数据集文件在数据集的文件夹里面。</p>
-<h2 id="五、安装pytorch"><a href="#五、安装pytorch" class="headerlink" title="五、安装pytorch"></a>五、安装pytorch</h2><p>因为我第一个运行的项目就是使用的pytorch框架，所以还要安装一下torch。</p>
-<p>在我直接使用pip install torch安装torch时安装不成功。有的电脑就直接可以这样安装好（可能使用的是CPU）。我就查找了GPU方法，使用了下面这条指令即可</p>
+<ul>
+<li><p>事先创建好了的环境，应该是在conda安装目录下面envs文件夹里面，然后选择use existing environment，从下面选择你创建好的环境地址即可。或者事先没有创建好环境，选择create new environment 。也就是选择了一个python版本，默认地址就行。最后点击下面的ok就行了。</p>
+</li>
+<li><p>这个conda的作用是你每建立一个项目，都可设置一个新的环境，这样项目之间就不会发生环境冲突的问题了</p>
+</li>
+<li><p>自此所有环境配置完成，下面就可运行项目啦，点击pycharm上面的绿色三角按钮，下面肯定会报错，因为你还没有安装使用到的包，此时就可根据报错去安装所有的包啦（一般就是pip install 包名字），还有注意一下数据集的路径，有没有数据集文件在数据集的文件夹里面。</p>
+</li>
+</ul>
+<h2 id="五、安装pytorch"><a href="#五、安装pytorch" class="headerlink" title="五、安装pytorch"></a>五、安装pytorch</h2><ul>
+<li><p>因为我第一个运行的项目就是使用的pytorch框架，所以还要安装一下torch。</p>
+</li>
+<li><p>在我直接使用pip install torch安装torch时安装不成功。有的电脑就直接可以这样安装好（可能使用的是CPU）。我就查找了GPU方法，使用了下面这条指令即可</p>
+</li>
+</ul>
 <pre class="line-numbers language-none"><code class="language-none">pip install torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>因为我这个使用的torch版本是1.2的，对应的torchvision是0.4的。下面给出了torch和torchvision的版本对应关系。</p>
-<p>参考链接：<a target="_blank" rel="noopener" href="http://t.csdn.cn/fEKb4">http://t.csdn.cn/fEKb4</a></p>
+<ul>
+<li><p>因为我这个使用的torch版本是1.2的，对应的torchvision是0.4的。搜索“torch和torchvision的版本对应关系”找到对应关系。</p>
+</li>
+<li><p>有时候安装pytorch总是不成功，可以考虑本地安装。就是把WHL文件下载到本地，然后再安装。</p>
+</li>
+<li><p>找到对应版本的whl文件保存到一个文件夹下，然后在相应的环境下安装如下图所示：</p>
+</li>
+</ul>
+<p><img src="/2022/12/20/rundl/image-20230530144513051.png" alt="image-20230530144513051"></p>
 <h2 id="六、大功告成"><a href="#六、大功告成" class="headerlink" title="六、大功告成"></a>六、大功告成</h2><p>我下面也是按照安装完一个包就运行一下，看还缺少啥再安装啥，还有在github上下载的还要看一下里面的readme.md</p>
 <p>可能里面有些一些比较重要的信息。</p>
 
