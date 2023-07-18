@@ -338,7 +338,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="手动实现数据结构-堆结构"><a href="#手动实现数据结构-堆结构" class="headerlink" title="手动实现数据结构-堆结构"></a>手动实现数据结构-堆结构</h1><h2 id="1-堆结构"><a href="#1-堆结构" class="headerlink" title="1.堆结构"></a>1.堆结构</h2><ul>
+                <h2 id="手动实现数据结构-堆结构"><a href="#手动实现数据结构-堆结构" class="headerlink" title="手动实现数据结构-堆结构"></a>手动实现数据结构-堆结构</h2><h3 id="1-堆结构"><a href="#1-堆结构" class="headerlink" title="1.堆结构"></a>1.堆结构</h3><ul>
 <li>堆的本质是一种特殊的树形数据结构，使用完全二叉树来实现:</li>
 <li>堆可以进行很多分类，但是平时使用的基本都是二叉堆;</li>
 <li>二叉堆又可以划分为最大堆和最小堆;</li>
@@ -350,7 +350,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li>堆结构通常是用来解决Top K问题的:<br>Top k问题是指在一组数据中，找出最前面的K个最大/最小的元素;常用的解决方案有使用排序算法、快速选择算法、堆结构等;</li>
 <li>具体长什么样子，以及它是如何实现出来的:<br>二叉堆用树形结构表示出来是一颗完全二叉树。通常在实现的时候我们底层会使用数组来实现</li>
 </ul>
-<h2 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h2><h3 id="2-1堆结构封装"><a href="#2-1堆结构封装" class="headerlink" title="2.1堆结构封装"></a>2.1堆结构封装</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Heap<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
+<h3 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h3><h4 id="2-1堆结构封装"><a href="#2-1堆结构封装" class="headerlink" title="2.1堆结构封装"></a>2.1堆结构封装</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Heap<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
    data<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
   <span class="token keyword">private</span> length<span class="token operator">:</span><span class="token builtin">number</span><span class="token operator">=</span><span class="token number">0</span>
 
@@ -384,7 +384,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token punctuation">}</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-2插入操作-insert"><a href="#2-2插入操作-insert" class="headerlink" title="2.2插入操作-insert"></a>2.2插入操作-insert</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//插入</span>
+<h4 id="2-2插入操作-insert"><a href="#2-2插入操作-insert" class="headerlink" title="2.2插入操作-insert"></a>2.2插入操作-insert</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//插入</span>
   <span class="token function">insert</span><span class="token punctuation">(</span>value<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment">//1.将元素放到数组尾部</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
@@ -407,7 +407,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-3提取操作-extract"><a href="#2-3提取操作-extract" class="headerlink" title="2.3提取操作-extract"></a>2.3提取操作-extract</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//提取</span>
+<h4 id="2-3提取操作-extract"><a href="#2-3提取操作-extract" class="headerlink" title="2.3提取操作-extract"></a>2.3提取操作-extract</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//提取</span>
   <span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token constant">T</span><span class="token operator">|</span><span class="token keyword">undefined</span><span class="token punctuation">{</span>
     <span class="token comment">//1.判断长度为0和为1的情况</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token keyword">undefined</span>
@@ -446,7 +446,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-4-原地建堆-buildHeap"><a href="#2-4-原地建堆-buildHeap" class="headerlink" title="2.4 原地建堆-buildHeap"></a>2.4 原地建堆-buildHeap</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//原地建堆：不使用额外的内存空间直接在原有数组上操作</span>
+<h4 id="2-4-原地建堆-buildHeap"><a href="#2-4-原地建堆-buildHeap" class="headerlink" title="2.4 原地建堆-buildHeap"></a>2.4 原地建堆-buildHeap</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//原地建堆：不使用额外的内存空间直接在原有数组上操作</span>
   <span class="token function">buildHeap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token comment">//1.使用arr</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token operator">=</span>arr
@@ -458,7 +458,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-5-二叉堆-最大-x2F-最小堆"><a href="#2-5-二叉堆-最大-x2F-最小堆" class="headerlink" title="2.5 二叉堆-最大/最小堆"></a>2.5 二叉堆-最大/最小堆</h3><p>传入true为最大堆，false为最小堆。前面的方法都是实现的最大堆</p>
+<h4 id="2-5-二叉堆-最大-x2F-最小堆"><a href="#2-5-二叉堆-最大-x2F-最小堆" class="headerlink" title="2.5 二叉堆-最大/最小堆"></a>2.5 二叉堆-最大/最小堆</h4><p>传入true为最大堆，false为最小堆。前面的方法都是实现的最大堆</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Heap<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
    data<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
   <span class="token keyword">private</span> length<span class="token operator">:</span><span class="token builtin">number</span><span class="token operator">=</span><span class="token number">0</span>

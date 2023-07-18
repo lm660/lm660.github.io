@@ -338,7 +338,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="手动实现数据结构-双向链表"><a href="#手动实现数据结构-双向链表" class="headerlink" title="手动实现数据结构-双向链表"></a>手动实现数据结构-双向链表</h1><h2 id="1-双向链表"><a href="#1-双向链表" class="headerlink" title="1.双向链表"></a>1.双向链表</h2><ul>
+                <h2 id="手动实现数据结构-双向链表"><a href="#手动实现数据结构-双向链表" class="headerlink" title="手动实现数据结构-双向链表"></a>手动实现数据结构-双向链表</h2><h3 id="1-双向链表"><a href="#1-双向链表" class="headerlink" title="1.双向链表"></a>1.双向链表</h3><ul>
 <li>既可以从头遍历到尾,又可以从尾遍历到头.</li>
 <li>也就是链表相连的过程是双向的.</li>
 <li>一个节点既有向前连接的引用prev,也有一个向后连接的引用next.</li>
@@ -346,7 +346,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li>每次在插入或删除某个节点时,需要处理四个引用,而不是两个.也就是实现起来要困难一些并且相当于单向链表,必然占用内存空间更大一些.但是这些缺点和我们使用起来的方便程度相比,是微不足道的.</li>
 </ul>
 <p><img src="/2023/05/13/DoubleLinkedList/image-20230513101817927.png" alt="image-20230513101817927"></p>
-<h2 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//记住！有两个指向，不要忘了prev。每个节点都是两个指向</span>
+<h3 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//记住！有两个指向，不要忘了prev。每个节点都是两个指向</span>
 <span class="token keyword">import</span> LinkedList <span class="token keyword">from</span> <span class="token string">"./01-实现单向链表LinkedList"</span>
 
 <span class="token keyword">class</span> <span class="token class-name">DoubleLinkedNode<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
@@ -471,7 +471,7 @@ dllist<span class="token punctuation">.</span><span class="token function">remov
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dllist<span class="token punctuation">.</span><span class="token function">traverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//mmm-&gt;aaa-&gt;eee-&gt;bbb-&gt;ccc-&gt;ddd</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-使用JS实现"><a href="#3-使用JS实现" class="headerlink" title="3.使用JS实现"></a>3.使用JS实现</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 创建双向链表的构造函数</span>
+<h3 id="3-使用JS实现"><a href="#3-使用JS实现" class="headerlink" title="3.使用JS实现"></a>3.使用JS实现</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 创建双向链表的构造函数</span>
   <span class="token keyword">function</span> <span class="token function">DoublyLinkedList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token comment">// 创建节点构造函数</span>
       <span class="token keyword">function</span> <span class="token function">Node</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>

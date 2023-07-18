@@ -345,7 +345,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="动态规划（DP）"><a href="#动态规划（DP）" class="headerlink" title="动态规划（DP）"></a>动态规划（DP）</h1><ul>
+                <h2 id="动态规划（DP）"><a href="#动态规划（DP）" class="headerlink" title="动态规划（DP）"></a>动态规划（DP）</h2><ul>
 <li>核心思想：通过将问题划分为若干个子问题，并在计算子问题的基础上，逐步构建出原问题的解。</li>
 <li>解题步骤：<ol>
 <li>定义状态</li>
@@ -362,7 +362,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li><p>动态规划是自底向上的求解：由一个for循环，i是从0开始的，当要求的是n的时候，n-1和n-2的值已经求得了</p>
 </li>
 </ul>
-<h2 id="1-斐波那契数列"><a href="#1-斐波那契数列" class="headerlink" title="1.斐波那契数列"></a>1.斐波那契数列</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof/">力扣链接：斐波那契数列</a></p>
+<h3 id="1-斐波那契数列"><a href="#1-斐波那契数列" class="headerlink" title="1.斐波那契数列"></a>1.斐波那契数列</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof/">力扣链接：斐波那契数列</a></p>
 <p>递归求解：递归算法通常采用函数自身调用的方式实现，每次调用函数时都会处理一个规模更小的问题，直到问题规模足够小，可以直接求解为止。</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">{</span>
   <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">return</span> n
@@ -402,7 +402,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token comment">//这个数列从第 3 项开始，每一项都等于前两项之和。0,1,1,2,3,5,8,13,21,34,55</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-爬楼梯"><a href="#2-爬楼梯" class="headerlink" title="2.爬楼梯"></a>2.爬楼梯</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">力扣链接：爬楼梯</a></p>
+<h3 id="2-爬楼梯"><a href="#2-爬楼梯" class="headerlink" title="2.爬楼梯"></a>2.爬楼梯</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/">力扣链接：爬楼梯</a></p>
 <ul>
 <li>爬楼梯:假设你正在爬楼梯。需要n阶你才能到达楼顶。每次你可以爬1或2个台阶。你有多少种不同的方法可以爬到楼顶呢?</li>
 </ul>
@@ -418,7 +418,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">jump</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-买股票最佳时期"><a href="#3-买股票最佳时期" class="headerlink" title="3.买股票最佳时期"></a>3.买股票最佳时期</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/">力扣链接：买股票最佳时期</a></p>
+<h3 id="3-买股票最佳时期"><a href="#3-买股票最佳时期" class="headerlink" title="3.买股票最佳时期"></a>3.买股票最佳时期</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/">力扣链接：买股票最佳时期</a></p>
 <ul>
 <li>定义状态:设dp[i]表示前i天中能够获取的最大利润。</li>
 <li>状态转移方程:<br>对于第i天，有两种情况:<br>1.在第i天卖出股票，在第i天的价格减去之前最<br>便宜那天的买入价格，因此可以得到利润为prices[i] - minPrice;<br>2.在第i天不卖出股票，那么目前的最大利润依然是前一天的最大利润dp[i-1]。<br>可以得到状态转移方程为:dp[i] = max(dp[i-1],prices[i] - minPrice)</li>
@@ -441,7 +441,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">maxProfit</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="4-最大子数组和"><a href="#4-最大子数组和" class="headerlink" title="4.最大子数组和"></a>4.最大子数组和</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">力扣链接：最大子数组和</a></p>
+<h3 id="4-最大子数组和"><a href="#4-最大子数组和" class="headerlink" title="4.最大子数组和"></a>4.最大子数组和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">力扣链接：最大子数组和</a></p>
 <ul>
 <li>以每个位置结尾的最大子序列的计算方式:<br>如果前面的子序列是负数，那么最大子序列和一定是自己;如果前面的子序列是正数，那么最大子序列和是自己+前值;</li>
 <li>由此可以得出计算公式:dp[i] = max(dp[i-1] + nums[i], nums[i])初始化值: dp[0] = nums[0]</li>
@@ -464,7 +464,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token comment">// console.log(maxSubArray([1]));</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="5-不同路径"><a href="#5-不同路径" class="headerlink" title="5.不同路径"></a>5.不同路径</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/">力扣链接：不同路径</a></p>
+<h3 id="5-不同路径"><a href="#5-不同路径" class="headerlink" title="5.不同路径"></a>5.不同路径</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/">力扣链接：不同路径</a></p>
 <ul>
 <li>设dp[i]j]表示从起点到网格的(i, j)点的不同路径数。</li>
 <li>对于每个格子，由于机器人只能从上面或左边到达该格子，因此有以下两种情况:<br>从上面的格子到达该格子，即dp[i][j]= dp[i-1][j];从左边的格子到达该格子，即dp[i][j] = dp[i][-1]。</li>
@@ -496,7 +496,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-<h2 id="6-礼物的最大价值"><a href="#6-礼物的最大价值" class="headerlink" title="6.礼物的最大价值"></a>6.礼物的最大价值</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof/">力扣链接：礼物的最大价值</a></p>
+<h3 id="6-礼物的最大价值"><a href="#6-礼物的最大价值" class="headerlink" title="6.礼物的最大价值"></a>6.礼物的最大价值</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof/">力扣链接：礼物的最大价值</a></p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//注意i和j的位置变化行的时候i在前，变化列的时候j在后</span>
 <span class="token keyword">function</span> <span class="token function">maxValue</span><span class="token punctuation">(</span>grid<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> m<span class="token operator">=</span>grid<span class="token punctuation">.</span>length
@@ -523,7 +523,7 @@ dp<span class="token punctuation">[</span>i<span class="token punctuation">]</sp
 
 
 
-<h2 id="7-最长递增子序列"><a href="#7-最长递增子序列" class="headerlink" title="7.最长递增子序列"></a>7.最长递增子序列</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">力扣链接：最长递增子序列</a></p>
+<h3 id="7-最长递增子序列"><a href="#7-最长递增子序列" class="headerlink" title="7.最长递增子序列"></a>7.最长递增子序列</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/">力扣链接：最长递增子序列</a></p>
 <ul>
 <li><p>定义状态:设dp[i]表示以第i个元素结尾的最长上升子序列的长度。</p>
 </li>

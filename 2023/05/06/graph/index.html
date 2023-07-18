@@ -341,13 +341,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="手动实现数据结构-图结构"><a href="#手动实现数据结构-图结构" class="headerlink" title="手动实现数据结构-图结构"></a>手动实现数据结构-图结构</h1><h2 id="1-树结构"><a href="#1-树结构" class="headerlink" title="1.树结构"></a>1.树结构</h2><ul>
+                <h2 id="手动实现数据结构-图结构"><a href="#手动实现数据结构-图结构" class="headerlink" title="手动实现数据结构-图结构"></a>手动实现数据结构-图结构</h2><h3 id="1-树结构"><a href="#1-树结构" class="headerlink" title="1.树结构"></a>1.树结构</h3><ul>
 <li><p>图中不能一个顶点也没有，图的顶点集V一定非空</p>
 </li>
 <li><p>图的存储结构：邻接表</p>
 </li>
 </ul>
-<h2 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h2><h3 id="2-1封装"><a href="#2-1封装" class="headerlink" title="2.1封装"></a>2.1封装</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Graph<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
+<h3 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h3><h4 id="2-1封装"><a href="#2-1封装" class="headerlink" title="2.1封装"></a>2.1封装</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Graph<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
   <span class="token comment">//保存顶点</span>
   <span class="token keyword">private</span> nodes<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
   <span class="token comment">//边：邻接表</span>
@@ -358,7 +358,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 <span class="token keyword">export</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-2添加节点和边"><a href="#2-2添加节点和边" class="headerlink" title="2.2添加节点和边"></a>2.2添加节点和边</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Graph<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
+<h4 id="2-2添加节点和边"><a href="#2-2添加节点和边" class="headerlink" title="2.2添加节点和边"></a>2.2添加节点和边</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">Graph<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
 <span class="token comment">//保存顶点</span>
   <span class="token keyword">private</span> vertexes<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token comment">//边：邻接表</span>
@@ -419,8 +419,7 @@ graph<span class="token punctuation">.</span><span class="token function">traver
 <span class="token comment">//I -&gt; E</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>2.3广度优先遍历</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//广度优先</span>
+<h4 id="2-3广度优先遍历"><a href="#2-3广度优先遍历" class="headerlink" title="2.3广度优先遍历"></a>2.3广度优先遍历</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//广度优先</span>
      <span class="token function">bfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
       <span class="token comment">//1.判断是否有顶点</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>vertexes<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
@@ -446,8 +445,7 @@ graph<span class="token punctuation">.</span><span class="token function">traver
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>2.4深度优先遍历</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//深度优先,类似广度，只是将邻居添加到栈的时候倒过来添加</span>
+<h4 id="2-4深度优先遍历"><a href="#2-4深度优先遍历" class="headerlink" title="2.4深度优先遍历"></a>2.4深度优先遍历</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//深度优先,类似广度，只是将邻居添加到栈的时候倒过来添加</span>
    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
      <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>vertexes<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span>
      <span class="token keyword">let</span> stack<span class="token operator">:</span><span class="token constant">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -469,7 +467,7 @@ graph<span class="token punctuation">.</span><span class="token function">traver
      <span class="token punctuation">}</span>
    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-使用JS实现"><a href="#3-使用JS实现" class="headerlink" title="3.使用JS实现"></a>3.使用JS实现</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Graph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="3-使用JS实现"><a href="#3-使用JS实现" class="headerlink" title="3.使用JS实现"></a>3.使用JS实现</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Graph</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
        <span class="token comment">// 属性</span>
        <span class="token keyword">this</span><span class="token punctuation">.</span>vertexes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 存储顶点</span>
        <span class="token keyword">this</span><span class="token punctuation">.</span>adjList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 存储边</span>

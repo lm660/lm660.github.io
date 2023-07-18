@@ -353,10 +353,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><ul>
+                <h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><ul>
 <li>排序算法(Sorting algorithm)是一种能将一串资料依照特定排序方式排列的算法。</li>
 </ul>
-<h3 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h3><ul>
+<h4 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h4><ul>
 <li>冒泡排序</li>
 <li>选择排序</li>
 <li>插入排序</li>
@@ -364,7 +364,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <li>快速排序</li>
 <li>堆排序</li>
 </ul>
-<h3 id="排序算法复杂度"><a href="#排序算法复杂度" class="headerlink" title="排序算法复杂度"></a>排序算法复杂度</h3><table>
+<h4 id="排序算法复杂度"><a href="#排序算法复杂度" class="headerlink" title="排序算法复杂度"></a>排序算法复杂度</h4><table>
 <thead>
 <tr>
 <th align="center">名称</th>
@@ -410,7 +410,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <td align="center">使用最大堆来维护一个有序序列，然后不断选择出最大的值。</td>
 </tr>
 </tbody></table>
-<h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
+<h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
   arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
@@ -443,7 +443,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N²)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
+<h3 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N²)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
   arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
@@ -470,7 +470,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token comment">// console.log(newnums);//[ 2, 6, 30, 51, 59, 66, 88]</span>
 <span class="token comment">// console.log(arr);//[ 2, 6, 30, 51, 59, 66, 88]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
+<h3 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(N)-&gt;最坏O(N²)-&gt;平均O(N²)</span>
 
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
@@ -498,7 +498,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newnums<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[ 2, 6, 30, 51, 59, 66, 88]</span>
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//[ 2, 6, 30, 51, 59, 66, 88]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4.归并排序"></a>4.归并排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(logN)-&gt;最坏O(NlogN)-&gt;平均O(NlogN)</span>
+<h3 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4.归并排序"></a>4.归并排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//最好O(logN)-&gt;最坏O(NlogN)-&gt;平均O(NlogN)</span>
 
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
@@ -554,7 +554,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-<h2 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//冒泡排序的一种改进</span>
+<h3 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//冒泡排序的一种改进</span>
 <span class="token comment">//最好O(logN)-&gt;最坏O(N²)-&gt;平均O(NlogN)</span>
 
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -606,7 +606,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-<h2 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6.堆排序"></a>6.堆排序</h2><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//选择排序的改进</span>
+<h3 id="6-堆排序"><a href="#6-堆排序" class="headerlink" title="6.堆排序"></a>6.堆排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//选择排序的改进</span>
 <span class="token comment">//O(NlogN)</span>
  <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>j<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>

@@ -336,12 +336,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="手动实现数据结构-优先级队列结构"><a href="#手动实现数据结构-优先级队列结构" class="headerlink" title="手动实现数据结构-优先级队列结构"></a>手动实现数据结构-优先级队列结构</h1><h2 id="1-优先级队列"><a href="#1-优先级队列" class="headerlink" title="1.优先级队列"></a>1.优先级队列</h2><ul>
+                <h2 id="手动实现数据结构-优先级队列结构"><a href="#手动实现数据结构-优先级队列结构" class="headerlink" title="手动实现数据结构-优先级队列结构"></a>手动实现数据结构-优先级队列结构</h2><h3 id="1-优先级队列"><a href="#1-优先级队列" class="headerlink" title="1.优先级队列"></a>1.优先级队列</h3><ul>
 <li>优先级队列(Priority Queue)是一种比普通队列更加高效的数据结构。</li>
 <li>它每次出队的元素都是具有最高优先级的，可以理解为元素按照关键字进行排序。</li>
 <li>可以用数组、链表等数据结构来实现，但是堆是最常用的实现方式。</li>
 </ul>
-<h2 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h2><h3 id="2-1实现一：传入我们想传的东西，在传入一个优先级"><a href="#2-1实现一：传入我们想传的东西，在传入一个优先级" class="headerlink" title="2.1实现一：传入我们想传的东西，在传入一个优先级"></a>2.1实现一：传入我们想传的东西，在传入一个优先级</h3><p>这里默认值大的优先级高</p>
+<h3 id="2-使用TS实现"><a href="#2-使用TS实现" class="headerlink" title="2.使用TS实现"></a>2.使用TS实现</h3><h4 id="2-1实现一：传入我们想传的东西，在传入一个优先级"><a href="#2-1实现一：传入我们想传的东西，在传入一个优先级" class="headerlink" title="2.1实现一：传入我们想传的东西，在传入一个优先级"></a>2.1实现一：传入我们想传的东西，在传入一个优先级</h4><p>这里默认值大的优先级高</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> Heap <span class="token keyword">from</span> <span class="token string">"../09_堆结构Heap/06-堆结构封装(二叉堆)"</span>
 
 <span class="token keyword">class</span> <span class="token class-name">PriorityNode<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
@@ -386,7 +386,7 @@ pqueue<span class="token punctuation">.</span><span class="token function">enque
 <span class="token punctuation">}</span><span class="token comment">//ccd lmm why www</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-2实现二：自己类内部决定按照什么优先级进行排序"><a href="#2-2实现二：自己类内部决定按照什么优先级进行排序" class="headerlink" title="2.2实现二：自己类内部决定按照什么优先级进行排序"></a>2.2实现二：自己类内部决定按照什么优先级进行排序</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> Heap <span class="token keyword">from</span> <span class="token string">"../09_堆结构Heap/06-堆结构封装(二叉堆)"</span>
+<h4 id="2-2实现二：自己类内部决定按照什么优先级进行排序"><a href="#2-2实现二：自己类内部决定按照什么优先级进行排序" class="headerlink" title="2.2实现二：自己类内部决定按照什么优先级进行排序"></a>2.2实现二：自己类内部决定按照什么优先级进行排序</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> Heap <span class="token keyword">from</span> <span class="token string">"../09_堆结构Heap/06-堆结构封装(二叉堆)"</span>
 
 
 <span class="token keyword">class</span> <span class="token class-name">PriorityQueue<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
