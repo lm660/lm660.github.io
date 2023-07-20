@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="剩余参数和arguments对象, “mmyaのblog”">
-    <meta name="description" content="1…args剩余参数剩余参数语法(以...为前缀)允许我们将一个不定数量的参数表示为一个数组。将函数内的所有剩余实参，转换成一个数组.
-function sum(...args) {
-  // 因为...args 将函数内的所有剩余实参（这">
+    <meta name="keywords" content="typeof和instanceof, “mmyaのblog”">
+    <meta name="description" content="1.typeoftypeof 操作符返回一个字符串，表示未经计算的操作数的类型
+typeof 1 // &#39;number&#39;
+typeof &#39;1&#39; // &#39;string&#39;
+typeof undefined // &#39;undefined&#39;
+type">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@ function sum(...args) {
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剩余参数和arguments对象 | “mmyaのblog”</title>
+    <title>typeof和instanceof | “mmyaのblog”</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -229,12 +231,12 @@ function sum(...args) {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">剩余参数和arguments对象</h1>
+                    <h1 class="description center-align post-title">typeof和instanceof</h1>
                 </div>
             </div>
         </div>
@@ -261,8 +263,8 @@ function sum(...args) {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0-arguments-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/">
-                                <span class="chip bg-color">剩余参数 arguments 展开运算符</span>
+                            <a href="/tags/typeof-instanceof/">
+                                <span class="chip bg-color">typeof instanceof</span>
                             </a>
                         
                     </div>
@@ -286,7 +288,7 @@ function sum(...args) {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-19
+                    2023-07-20
                 </div>
                 
 
@@ -335,64 +337,90 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1…args剩余参数"><a href="#1…args剩余参数" class="headerlink" title="1…args剩余参数"></a>1…args剩余参数</h2><p>剩余参数语法(以<code>...</code>为前缀)允许我们将一个不定数量的参数表示为一个<code>数组</code>。将函数内的所有剩余实参，转换成一个数组.</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 因为...args 将函数内的所有剩余实参（这里是所有实参），转换成一个数组</span>
-  <span class="token comment">// args --&gt; [1, 2, 3]</span>
-  <span class="token keyword">return</span> args<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">previous<span class="token punctuation">,</span> current</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> previous <span class="token operator">+</span> current<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//6</span>
+                <h2 id="1-typeof"><a href="#1-typeof" class="headerlink" title="1.typeof"></a>1.typeof</h2><p><code>typeof</code> 操作符返回一个字符串，表示未经计算的操作数的类型</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">typeof</span> <span class="token number">1</span> <span class="token comment">// 'number'</span>
+<span class="token keyword">typeof</span> <span class="token string">'1'</span> <span class="token comment">// 'string'</span>
+<span class="token keyword">typeof</span> <span class="token keyword">undefined</span> <span class="token comment">// 'undefined'</span>
+<span class="token keyword">typeof</span> <span class="token boolean">true</span> <span class="token comment">// 'boolean'</span>
+<span class="token keyword">typeof</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 'symbol'</span>
+<span class="token keyword">typeof</span> <span class="token keyword">null</span> <span class="token comment">// 'object'</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// 'object'</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 'object'</span>
+<span class="token keyword">typeof</span> console <span class="token comment">// 'object'</span>
+<span class="token keyword">typeof</span> console<span class="token punctuation">.</span>log <span class="token comment">// 'function'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>args<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">test</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token comment">//1 2 [3, 4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="2展开运算符"><a href="#2展开运算符" class="headerlink" title="2展开运算符"></a>2展开运算符</h2><p>多个参数的调用</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
-<span class="token keyword">var</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">test</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>数组字面量中使用</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> arr1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> arr2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">...</span>arr1<span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//['a','b','c','d','e']</span>
-
-<span class="token keyword">var</span> arr1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> arr2<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arr1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//['a','b','c','d','e']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用于解构赋值</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> <span class="token punctuation">[</span>arg1<span class="token punctuation">,</span>arg2<span class="token punctuation">,</span><span class="token operator">...</span>arg3<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-arg1 <span class="token comment">//1</span>
-arg2 <span class="token comment">//2</span>
-arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>类数组对象变成数组</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// a : Set(5) {1, 2, 3, 4, 5}</span>
-<span class="token keyword">let</span> b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span>    <span class="token comment">//  (5) [1, 2, 3, 4, 5] </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>虽然<code>typeof null</code>为<code>object</code>，但这只是<code>JavaScript</code> 存在的一个悠久 <code>Bug</code>(js存储变量类型，对象类型是000，又null为空指针也是000)，不代表<code>null</code>就是引用数据类型，并且<code>null</code>本身也不是对象</p>
+<p>在用 <code>typeof</code> 来判断变量类型的时候，我们需要注意，最好是用 <code>typeof</code> 来判断基本数据类型（包括<code>symbol</code>），避免对 <code>null</code> 的判断。如果需要在 <code>if</code> 语句中判断是否为 <code>null</code>，直接通过<code>===null</code>来判断就好</p>
+<p>可以发现引用类型数据，用<code>typeof</code>来判断的话，除了<code>function</code>会被识别出来之外，其余的都输出<code>object</code></p>
+<p>如果我们想要判断一个变量是否存在，可以使用<code>typeof</code>：(不能使用<code>if(a)</code>， 若<code>a</code>未声明，则报错)</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a <span class="token operator">!=</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//变量存在</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="3arguments对象"><a href="#3arguments对象" class="headerlink" title="3arguments对象"></a>3arguments对象</h2><p>arguments是一个对应于传递给函数的参数的类数组(array-like)<code>对象</code>。开发者无需明确指出参数名，就能访问它们。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token comment">// Arguments(4) [0:1, 1:2, 2:3, 3:4, callee: ƒ, Symbol(Symbol.iterator): ƒ] </span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token comment">//3 代表的是函数实参的个数. 检测参数个数</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token comment">// 3 代表函数形参的个数</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>callee<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token comment">// 3 arguments.callee指向函数本身</span>
-<span class="token punctuation">}</span>
+<h2 id="2-instanceof"><a href="#2-instanceof" class="headerlink" title="2.instanceof"></a>2.instanceof</h2><p><code>instanceof</code> 运算符用于检测构造函数的 <code>prototype</code> 属性是否出现在某个实例对象的原型链上。</p>
+<p>构造函数通过<code>new</code>可以实例对象，<code>instanceof</code>能判断这个对象是否是之前那个构造函数生成的对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 定义构建函数</span>
+<span class="token keyword">let</span> <span class="token function-variable function">Car</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> benz <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+benz <span class="token keyword">instanceof</span> <span class="token class-name">Car</span> <span class="token comment">// true</span>
+<span class="token keyword">let</span> car <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'xxx'</span><span class="token punctuation">)</span>
+car <span class="token keyword">instanceof</span> <span class="token class-name">String</span> <span class="token comment">// true</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'xxx'</span>
+str <span class="token keyword">instanceof</span> <span class="token class-name">String</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token function">test</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于<code>instanceof</code>的实现原理，也就是顺着原型链去找，直到找到相同的原型对象，返回<code>true</code>，否则为<code>false</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">myInstanceof</span><span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 这里先用typeof来判断基础数据类型，如果是，直接返回false</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> left <span class="token operator">!==</span> <span class="token string">'object'</span> <span class="token operator">||</span> left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token comment">// getProtypeOf是Object对象自带的API，能够拿到参数的原型对象</span>
+    <span class="token keyword">let</span> proto <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                  
+        <span class="token keyword">if</span><span class="token punctuation">(</span>proto <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>proto <span class="token operator">===</span> right<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token comment">//找到相同原型对象，返回true</span>
+        proto <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">getPrototypeof</span><span class="token punctuation">(</span>proto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="4区别"><a href="#4区别" class="headerlink" title="4区别"></a>4区别</h2><ul>
-<li>剩余参数只包含那些<code>没有对应形参</code>的实参，而 arguments 对象包含了传给函数的<code>所有实参</code>。</li>
-<li>arguments对象不是一个真正的数组，可使用length、通过index索引来访问，但不能使用数组方法。而剩余参数是真正的 Array实例，也就是说你能够在它上面直接使用所有的数组方法，比如 sort，map，forEach或pop。</li>
-<li>arguments对象还有一些附加的属性 （如callee属性）。</li>
+<h2 id="3-区别"><a href="#3-区别" class="headerlink" title="3.区别"></a>3.区别</h2><ul>
+<li><code>typeof</code>会返回一个变量的基本类型，<code>instanceof</code>返回的是一个布尔值</li>
+<li><code>instanceof</code> 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型</li>
+<li>而<code>typeof</code> 也存在弊端，它虽然可以判断基础数据类型（<code>null</code> 除外），但是引用数据类型中，除了<code>function</code> 类型以外，其他的也无法判断</li>
 </ul>
+<p>如果需要通用检测数据类型，可以采用<code>Object.prototype.toString</code>，调用该方法，统一返回格式<code>“[object Xxx]”</code>的字符串</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>       <span class="token comment">// "[object Object]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token comment">// 同上结果，加上call也ok</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment">// "[object Number]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span>  <span class="token comment">// "[object String]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>  <span class="token comment">// "[object Boolean]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token comment">// "[object Function]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>   <span class="token comment">//"[object Null]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token comment">//"[object Undefined]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">123</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span>    <span class="token comment">//"[object RegExp]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//"[object Date]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>       <span class="token comment">//"[object Array]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span>  <span class="token comment">//"[object HTMLDocument]"</span>
+<span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span>   <span class="token comment">//"[object Window]"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="全局通用的数据类型判断方法"><a href="#全局通用的数据类型判断方法" class="headerlink" title="全局通用的数据类型判断方法"></a>全局通用的数据类型判断方法</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">getType</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> type  <span class="token operator">=</span> <span class="token keyword">typeof</span> obj<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>type <span class="token operator">!==</span> <span class="token string">"object"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// 先进行typeof判断，如果是基础数据类型，直接返回</span>
+    <span class="token keyword">return</span> type<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 对于typeof返回结果是object的，再进行如下的判断，正则返回结果</span>
+  <span class="token keyword">return</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\[object (\S+)\]$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">'$1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token comment">// "Array" typeof []是object，因此toString返回</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span>  <span class="token comment">// "string" typeof 直接返回</span>
+<span class="token function">getType</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span> <span class="token comment">// "Window" toString返回</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>   <span class="token comment">// "Null"首字母大写，typeof null是object，需toString来判断</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span>   <span class="token comment">// "undefined" typeof 直接返回</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span>            <span class="token comment">// "undefined" typeof 直接返回</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// "function" typeof能判断，因此首字母小写</span>
+<span class="token function">getType</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">123</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span>      <span class="token comment">//"RegExp" toString返回</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -419,7 +447,7 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lm660.github.io/2023/07/19/%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8Carguments%E5%AF%B9%E8%B1%A1/">https://lm660.github.io/2023/07/19/%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8Carguments%E5%AF%B9%E8%B1%A1/</a>
+                    <a href="https://lm660.github.io/2023/07/20/typeof%E5%92%8Cinstanceof/">https://lm660.github.io/2023/07/20/typeof%E5%92%8Cinstanceof/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -457,8 +485,8 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0-arguments-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/">
-                                    <span class="chip bg-color">剩余参数 arguments 展开运算符</span>
+                                <a href="/tags/typeof-instanceof/">
+                                    <span class="chip bg-color">typeof instanceof</span>
                                 </a>
                             
                         </div>
@@ -508,13 +536,13 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/20/%E5%8E%9F%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+                <a href="/2023/07/20/%E7%BB%A7%E6%89%BF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="原型/原型链">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="继承">
                         
-                        <span class="card-title">原型/原型链</span>
+                        <span class="card-title">继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -549,13 +577,13 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/19/%E5%AE%9E%E7%8E%B0call-apply-bind/">
+                <a href="/2023/07/20/%E5%8E%9F%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E9%93%BE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="实现call/apply/bind">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="原型/原型链">
                         
-                        <span class="card-title">实现call/apply/bind</span>
+                        <span class="card-title">原型/原型链</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -566,7 +594,7 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
                             </span>
                         <span class="publish-author">
                             
@@ -579,14 +607,6 @@ arg3 <span class="token comment">//['3','4']</span><span aria-hidden="true" clas
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/call-apply-bind/">
-                        <span class="chip bg-color">call apply bind</span>
-                    </a>
-                    
                 </div>
                 
             </div>
